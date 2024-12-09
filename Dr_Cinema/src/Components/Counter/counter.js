@@ -1,20 +1,17 @@
 import {View, Button, Text} from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { incrementCounter } from "../../Features/counter/counter-slice";
+import { getToken, getMovies } from "../API/apiSlicer";
 
 
 export function Counter(){
     const dispatch = useDispatch();
-    const counter = useSelector((state) => {
-        console.log(state)
-        return state.counter.value
-    });
+    const token = useSelector((state) => {console.log(state), state.api.token})
+    
 
     return(
         <View>
-            <Text>{counter}</Text>
-            <Button title="Get Token" onPress={() => dispatch(incrementCounter())}/>
-            <Button title="Get Movies" onPress={() => dispatch(incrementCounter())}/>
+            <Button title="Get Token" onPress={() => dispatch(getToken())}/>
+            <Button title="Get Movies" onPress={() => dispatch(getMovies())}/>
         </View>
     );
 }
