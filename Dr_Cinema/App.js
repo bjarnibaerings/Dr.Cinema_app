@@ -3,15 +3,11 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Provider as StoreProvider } from 'react-redux';
 import store from "./src/Redux/store";
 import { Counter } from './src/Components/Counter/counter';
+import AppContainer from "./src/Routes"
 
 export default function App() {
   return (
-    <StoreProvider store={store}>
-      <View style={styles.container}>
-      <Text>HELLO</Text>
-       <Counter/>
-      </View>
-    </StoreProvider>
+    <AppContainer/>
   );
 }
 
