@@ -5,23 +5,28 @@ import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
 import Frame from '../View/Frame'; //remove later on and use as component
+//main 3 pages
+import HomePage from "../View/Home Page"
 import AllCinemas from '../View/AllCinemas';
-import ChosenCinema from '../View/ChosenCinema';
-import ChosenMovie from '../View/ChosenMovie';
 import UpcomingMovies from '../View/UpcomingMovies';
-import CinemasMovies from '../View/CinemasMovies';
-import ChosenUpcomingMovie from '../View/ChosenUpcomingMovie'
+
+import ChosenCinema from '../View/ChosenCinema'; //from all cinemas
+import CinemasMovies from '../View/CinemasMovies'; //from see chosen cinema
+import ChosenMovie from '../View/ChosenMovie'; //from chosen upcoming movies AND cinemas movies
+import ChosenUpcomingMovie from '../View/ChosenUpcomingMovie' //from upcoming movies 
+
+
 
 const Routes = () => (
     <NavigationContainer>
-        <Stack.Navigator initialRouteName="Frame">
-            <Stack.Screen name="Frame" component={Frame} />
-            <Stack.Screen name="Cinemas" component={AllCinemas} />
+        <Stack.Navigator initialRouteName="Home Page">
+            <Stack.Screen name="Home Page" component={HomePage}/>
+            <Stack.Screen name="AllCinemas" component={AllCinemas} />
+            <Stack.Screen name="UpcomingMovies" component={UpcomingMovies} />
             <Stack.Screen name="{cinema.name}" component={ChosenCinema} />
             <Stack.Screen name="{cinema.name}'s Movies" component={CinemasMovies} />
             <Stack.Screen name="{movie.name}" component={ChosenMovie} />
-            <Stack.Screen name="Upcoming Movies" component={UpcomingMovies} />
-            <Stack.Screen name="{movie.name}" component={ChosenUpcomingMovie} />
+            <Stack.Screen name="{upcomingMovie.name}" component={ChosenUpcomingMovie} />
         </Stack.Navigator>
     </NavigationContainer>
 );
