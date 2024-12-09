@@ -8,3 +8,5 @@ export default combineReducers({
     cinemaMovies,
     upcomingMovies
 });
+
+//Merge issue
