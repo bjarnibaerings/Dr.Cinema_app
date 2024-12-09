@@ -13,7 +13,8 @@ export function Counter(){
     return(
         <View>
             <Text>{counter}</Text>
-            <Button title="Increment" onPress={() => dispatch(incrementCounter())}/>
+            <Button title="Get Token" onPress={() => dispatch(incrementCounter())}/>
+            <Button title="Get Movies" onPress={() => dispatch(incrementCounter())}/>
         </View>
     );
 }
