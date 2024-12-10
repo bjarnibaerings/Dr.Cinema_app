@@ -14,8 +14,8 @@ const ChosenCinema = ({navigation}) => {
             <Text>Cinema Adress: {cinema.address} {cinema.city}</Text>
             <Text>Cinema Phone: {cinema.phone}</Text>
             <Text>Cinema Website: {cinema.website}</Text>
-            <TouchableOpacity onPress={() => navigation.navigate("{cinema.name}'s Movies")}>
-                <Text> click here for all movies from cinema</Text>
+            <TouchableOpacity onPress={() => navigation.navigate("{cinema.name}'s Movies", { cinema })}>
+                <Text>Click here for all movies from this cinema</Text>
             </TouchableOpacity>
         </View>
     )
