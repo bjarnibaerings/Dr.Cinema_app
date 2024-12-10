@@ -54,13 +54,15 @@ export function getMovies(){
             const state = getState()
             const token = state.api.token
             console.log("GETTING ALL MOVIES")
+            console.log(state.api.token)
             const response = await fetch(`${baseUrl}/movies?token=${token}`)
             const json = await response.json();
-            console.log(json[0].title);
+            console.log(json);
             dispatch(setMovies(json));
             
         } catch (err){
             dispatch(setMovies(err.toString()));
+            console.log(err)
         }
     }
 }
@@ -72,6 +74,8 @@ export function getCinemas(){
             //console.log(baseUrl)
             const state = getState()
             const token = state.api.token
+            console.log("THIS IS TOKEN FOR CINEMA")
+            console.log(state.api.token)
 
             const response = await fetch(`${baseUrl}/theaters`, {
                 method: "GET",

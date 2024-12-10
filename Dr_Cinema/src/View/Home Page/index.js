@@ -1,8 +1,15 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { View, Text, Touchable, TouchableOpacity } from "react-native"
-
+import { getToken } from "../../Components/API/apiSlicer";
+import { useDispatch } from "react-redux";
 
 const HomePage = ({ navigation: {navigate}}) => {
+    const dispatch = useDispatch();
+
+    useEffect(() =>{
+        dispatch(getToken());
+    }, [dispatch])
+
     return(
         <View>
             <Text>hello this is the main page :D :D :D :D :D :D :D :D </Text>'

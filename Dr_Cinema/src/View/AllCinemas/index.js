@@ -7,9 +7,10 @@ import { Provider as StoreProvider } from "react-redux";
 const AllCinemas = ({navigation}) => {
     return(
         <View>
-        <StoreProvider store={store}>
             <Cinemas navigation = {navigation}/>
-        </StoreProvider>
+            <TouchableOpacity onPress={() => navigation.navigate('{cinema.name}')}>
+                <Text> click here for a chosen cinema</Text>
+            </TouchableOpacity>
         </View>
     )
 };
