@@ -14,12 +14,15 @@ export function Cinemas({ navigation }){
         dispatch(getCinemas());
     }, [dispatch])
 
+    const sortedCinemas = cinemas.slice().sort((a, b) => 
+        a.name.localeCompare(b.name));
+
 
     return(
         <View>
             <Button title="Get Movies" onPress={() => dispatch(getMovies())}/>
             <FlatList
-                data={cinemas}
+                data={sortedCinemas}
                 keyExtractor={(item) => item.id}
                 renderItem={({item}) => (
                     <View style={styles.container}>
