@@ -1,3 +1,4 @@
+import {useEffect} from "react";
 import {View, Button, Text, FlatList, TouchableOpacity} from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { getToken, getMovies, getCinemas } from "../API/apiSlicer";
@@ -9,11 +10,14 @@ export function Cinemas({ navigation }){
     const token = useSelector((state) => {console.log(state.api.token);return state;})
     const cinemas = useSelector((state) => state.api.cinemas);
 
+    useEffect(() =>{
+        dispatch(getCinemas());
+    }, [dispatch])
+
 
     return(
         <View>
             <Button title="Get Movies" onPress={() => dispatch(getMovies())}/>
-            <Button title="Get Cinemas" onPress={() => dispatch(getCinemas())}/>
             <FlatList
                 data={cinemas}
                 keyExtractor={(item) => item.id}
