@@ -6,13 +6,12 @@ import styles from "./styles";
 
 export function Cinemas({ navigation }){
     const dispatch = useDispatch();
-    const token = useSelector((state) => {return state;})
+    const token = useSelector((state) => {console.log(state.api.token);return state;})
     const cinemas = useSelector((state) => state.api.cinemas);
 
 
     return(
         <View>
-            <Button title="Get Token" onPress={() => dispatch(getToken())}/>
             <Button title="Get Movies" onPress={() => dispatch(getMovies())}/>
             <Button title="Get Cinemas" onPress={() => dispatch(getCinemas())}/>
             <FlatList
