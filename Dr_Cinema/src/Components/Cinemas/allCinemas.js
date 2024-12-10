@@ -8,7 +8,9 @@ export function Cinemas({ navigation }){
     const dispatch = useDispatch();
     const token = useSelector((state) => {return state;})
     const cinemas = useSelector((state) => state.api.cinemas);
+    const movies = useSelector((state) => state.api.movies)
 
+    console.log(movies)
 
     return(
         <View>

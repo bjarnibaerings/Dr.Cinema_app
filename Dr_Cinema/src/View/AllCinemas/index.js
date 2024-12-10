@@ -10,9 +10,6 @@ const AllCinemas = ({navigation}) => {
         <StoreProvider store={store}>
             <Cinemas navigation = {navigation}/>
         </StoreProvider>
-            <TouchableOpacity onPress={() => navigation.navigate('{cinema.name}')}>
-                <Text> click here for a chosen cinema</Text>
-            </TouchableOpacity>
         </View>
     )
 };

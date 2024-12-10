@@ -6,6 +6,7 @@ import { useRoute } from "@react-navigation/native";
 const ChosenCinema = ({navigation}) => {
     const route = useRoute();
     const {cinema} = route.params;
+
     return(
         <View>
             <Text>Cinema Name: {cinema.name}</Text>
