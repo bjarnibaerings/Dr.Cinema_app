@@ -10,15 +10,23 @@ const apiSlice = createSlice({
     name:"API",
     initialState: {
         token: "",
+        cinemas:[],
+        movies:[]
     },
     reducers: {
-        token: (state, action) =>{
+        setToken: (state, action) =>{
             state.token = action.payload;
+        },
+        setCinemas: (state, action) =>{
+            state.cinemas = action.payload;
+        },
+        setMovies: (state, action) =>{
+            state.movies = action.payload;
         }
     }
 });
 
-const {token} = apiSlice.actions;
+const {setToken, setCinemas, setMovies} = apiSlice.actions;
 
 export function getToken(){
     return async (dispatch) => {
@@ -31,10 +39,10 @@ export function getToken(){
             })
 
             const json = await response.json();
-            dispatch(token(json.token));
+            dispatch(setToken(json.token));
             
         } catch (err){
-            dispatch(token(err.toString()));
+            dispatch(setToken(err.toString()));
         }
     }
 }
@@ -49,9 +57,10 @@ export function getMovies(){
             const response = await fetch(`${baseUrl}/movies?token=${token}`)
             const json = await response.json();
             console.log(json[0].title);
+            dispatch(setMovies(json));
             
         } catch (err){
-            dispatch(token(err.toString()));
+            dispatch(setMovies(err.toString()));
         }
     }
 }
@@ -72,9 +81,10 @@ export function getCinemas(){
             });
             const json = await response.json();
             console.log(json[0].name);
-            
+            dispatch(setCinemas(json));
+
         } catch (err){
-            dispatch(token(err.toString()));
+            dispatch(setCinemas(err.toString()));
         }
     }
 }
