@@ -5,8 +5,8 @@ import { getToken, getMovies, getCinemas } from "../API/apiSlicer";
 
 export function Cinemas(){
     const dispatch = useDispatch();
-    const token = useSelector((state) => {console.log(state), state.api.token})
-    
+    const token = useSelector((state) => {console.log("State in StateSelector: ",state); return state;})
+
 
     return(
         <View>

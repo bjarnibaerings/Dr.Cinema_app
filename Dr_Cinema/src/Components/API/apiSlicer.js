@@ -63,7 +63,6 @@ export function getCinemas(){
             //console.log(baseUrl)
             const state = getState()
             const token = state.api.token
-            console.log("GETTING CINEMAS")
 
             const response = await fetch(`${baseUrl}/theaters`, {
                 method: "GET",
