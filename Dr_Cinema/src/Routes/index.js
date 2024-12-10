@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Provider as StoreProvider } from 'react-redux';
+import store from '../Redux/store';
 
 const Stack = createStackNavigator();
 
@@ -18,17 +20,19 @@ import ChosenUpcomingMovie from '../View/ChosenUpcomingMovie' //from upcoming mo
 
 
 const Routes = () => (
-    <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home Page">
-            <Stack.Screen name="Home Page" component={HomePage}/>
-            <Stack.Screen name="AllCinemas" component={AllCinemas} />
-            <Stack.Screen name="UpcomingMovies" component={UpcomingMovies} />
-            <Stack.Screen name="{cinema.name}" component={ChosenCinema} />
-            <Stack.Screen name="{cinema.name}'s Movies" component={CinemasMovies} />
-            <Stack.Screen name="{movie.name}" component={ChosenMovie} />
-            <Stack.Screen name="{upcomingMovie.name}" component={ChosenUpcomingMovie} />
-        </Stack.Navigator>
-    </NavigationContainer>
+    <StoreProvider store={store}>
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName="Home Page">
+                <Stack.Screen name="Home Page" component={HomePage}/>
+                <Stack.Screen name="AllCinemas" component={AllCinemas} />
+                <Stack.Screen name="UpcomingMovies" component={UpcomingMovies} />
+                <Stack.Screen name="{cinema.name}" component={ChosenCinema} />
+                <Stack.Screen name="{cinema.name}'s Movies" component={CinemasMovies} />
+                <Stack.Screen name="{movie.name}" component={ChosenMovie} />
+                <Stack.Screen name="{upcomingMovie.name}" component={ChosenUpcomingMovie} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    </StoreProvider>
 );
 
 export default Routes;
