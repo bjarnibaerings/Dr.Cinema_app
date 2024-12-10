@@ -1,11 +1,12 @@
 import {View, Button, Text, FlatList, TouchableOpacity} from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { getToken, getMovies, getCinemas } from "../API/apiSlicer";
+import styles from "./styles";
 
 
 export function Cinemas({ navigation }){
     const dispatch = useDispatch();
-    const token = useSelector((state) => {console.log("State in StateSelector: ",state.api.cinemas); return state;})
+    const token = useSelector((state) => {return state;})
     const cinemas = useSelector((state) => state.api.cinemas);
 
 
@@ -18,9 +19,9 @@ export function Cinemas({ navigation }){
                 data={cinemas}
                 keyExtractor={(item) => item.id}
                 renderItem={({item}) => (
-                    <View>
+                    <View style={styles.container}>
                     <TouchableOpacity onPress={() => navigation.navigate('{cinema.name}', {cinema: item})}>
-                        <Text>{item.name}</Text>
+                        <Text style={styles.cinemaName}>{item.name}</Text>
                     </TouchableOpacity>
                         <Text>{item.website}</Text>
                     </View>
