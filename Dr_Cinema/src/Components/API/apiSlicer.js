@@ -45,10 +45,34 @@ export function getMovies(){
             //console.log(baseUrl)
             const state = getState()
             const token = state.api.token
-            console.log("TOKEN IN GET MOVIES")
+            console.log("GETTING ALL MOVIES")
             const response = await fetch(`${baseUrl}/movies?token=${token}`)
             const json = await response.json();
             console.log(json[0].title);
+            
+        } catch (err){
+            dispatch(token(err.toString()));
+        }
+    }
+}
+
+
+export function getCinemas(){
+    return async (dispatch, getState) => {
+        try{
+            //console.log(baseUrl)
+            const state = getState()
+            const token = state.api.token
+            console.log("GETTING CINEMAS")
+
+            const response = await fetch(`${baseUrl}/theaters`, {
+                method: "GET",
+                headers: {
+                    "x-access-token": token,
+                },
+            });
+            const json = await response.json();
+            console.log(json[0].name);
             
         } catch (err){
             dispatch(token(err.toString()));
