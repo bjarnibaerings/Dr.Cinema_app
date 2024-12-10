@@ -8,7 +8,7 @@ const AllCinemas = ({navigation}) => {
     return(
         <View>
         <StoreProvider store={store}>
-            <Cinemas/>
+            <Cinemas navigation = {navigation}/>
         </StoreProvider>
             <TouchableOpacity onPress={() => navigation.navigate('{cinema.name}')}>
                 <Text> click here for a chosen cinema</Text>
