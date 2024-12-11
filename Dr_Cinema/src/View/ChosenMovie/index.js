@@ -1,14 +1,14 @@
-import React from "react"
-import {View, Text, TouchableOpacity} from "react-native"
+// CinemasMovies.js
+import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import DetailedMovie from "../../Components/Movies/detailedlMovie";
 
-
-const ChosenMovie = ({navigation}) => {
-    return(
+const MovieScreen = ({ navigation, route }) => {
+    return (
         <View>
-            <Text> this is a specific movie </Text>
-
+            <DetailedMovie route = {route}/> {/* This will render the Movies component */}
         </View>
-    )
+    );
 };
 
-export default ChosenMovie;
+export default MovieScreen;

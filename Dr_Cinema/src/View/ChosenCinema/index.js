@@ -7,7 +7,8 @@ import Footer from "../../Components/Footer";
 
 const ChosenCinema = ({navigation}) => {
     const route = useRoute();
-    const {cinema} = route.params;
+    const { cinema } = route.params;
+
     return(
         <View style={{flex:1}}>
             <Text style={styles.title}>{cinema.name}</Text>
@@ -20,7 +21,7 @@ const ChosenCinema = ({navigation}) => {
             <Text style={styles.title}>Description</Text>
             
             <Text>{cinema.description}</Text>
-            <TouchableOpacity onPress={() => navigation.navigate("{cinema.name}'s Movies")}>
+            <TouchableOpacity onPress={() => navigation.navigate("{cinema.name}'s Movies", { cinema })}>
                 <Text> click here for all movies from cinema</Text>
             </TouchableOpacity>
             <View style={{flex:2}}>

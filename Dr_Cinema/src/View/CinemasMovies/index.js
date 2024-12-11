@@ -1,16 +1,14 @@
-import React from "react"
-import {View, Text, TouchableOpacity} from "react-native"
+// CinemasMovies.js
+import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import Movies from "../../Components/CinemasMovies/moviesList"; // Correct import for default export
 
-
-const CinemasMovies = ({navigation}) => {
-    return(
+const CinemasMovies = ({ navigation }) => {
+    return (
         <View>
-            <Text> this is cinemas movies </Text>
-            <TouchableOpacity onPress={() => navigation.navigate("{movie.name}")}>
-                <Text> click here to go on a specific movie </Text>
-            </TouchableOpacity>
+            <Movies navigation = {navigation}/> {/* This will render the Movies component */}
         </View>
-    )
+    );
 };
 
 export default CinemasMovies;
