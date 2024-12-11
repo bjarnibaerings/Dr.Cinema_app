@@ -12,7 +12,7 @@ const HomePage = ({ navigation: {navigate}}) => {
     }, [dispatch])
 
     return(
-        <View>
+        <View style={{flex:1}}>
             <Text>hello this is the main page :D :D :D :D :D :D :D :D </Text>'
             <TouchableOpacity onPress={() => navigate("AllCinemas")}>
                 <Text>press here to go to cinema</Text>

@@ -8,8 +8,8 @@ const Footer = () => {
     const navigation = useNavigation();
 
     return (
-        <View style={styles.header}>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("AllCinemas")}>
+        <View style={styles.footer}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Home Page")}>
                 <Text style={styles.buttonText}>Home</Text>
             </TouchableOpacity>
 
@@ -17,7 +17,7 @@ const Footer = () => {
                 <Text style={styles.buttonText}>Cinemas</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("AllCinemas")}>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("UpcomingMovies")}>
                 <Text style={styles.buttonText}>Upcoming Movies</Text>
             </TouchableOpacity>
         </View>
@@ -25,13 +25,14 @@ const Footer = () => {
 };
 
 const styles = StyleSheet.create({
-    header:{
-        marginTop:70,
+    footer:{
         height: 80,
         width: '100%',
         backgroundColor: 'lightgray',
         bottom: 0,
-        flexDirection: "row"
+        flexDirection: "row",
+        position:"absolute",
+        bottom:5
     },
     button:{
         borderColor: "black",
