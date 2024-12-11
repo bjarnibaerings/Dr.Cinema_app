@@ -31,6 +31,7 @@ const {setToken, setCinemas, setMovies} = apiSlice.actions;
 export function getToken(){
     return async (dispatch) => {
         try{
+            console.log("GETTING TOKEN")
             const response = await fetch(authenticateBaseUrl, {
                 method: "POST",
                 headers: {
@@ -39,6 +40,7 @@ export function getToken(){
             })
 
             const json = await response.json();
+            console.log("GOT TOKEN")
             dispatch(setToken(json.token));
             
         } catch (err){
@@ -56,11 +58,11 @@ export function getMovies(){
             console.log("GETTING ALL MOVIES")
             const response = await fetch(`${baseUrl}/movies?token=${token}`)
             const json = await response.json();
-            console.log(json[0].title);
             dispatch(setMovies(json));
             
         } catch (err){
             dispatch(setMovies(err.toString()));
+            console.log(err)
         }
     }
 }
@@ -72,6 +74,7 @@ export function getCinemas(){
             //console.log(baseUrl)
             const state = getState()
             const token = state.api.token
+            console.log("GETTING CINEMAS")
 
             const response = await fetch(`${baseUrl}/theaters`, {
                 method: "GET",
@@ -80,7 +83,7 @@ export function getCinemas(){
                 },
             });
             const json = await response.json();
-            console.log(json[0].name);
+            console.log("GOT ALL CINEMAS")
             dispatch(setCinemas(json));
 
         } catch (err){
