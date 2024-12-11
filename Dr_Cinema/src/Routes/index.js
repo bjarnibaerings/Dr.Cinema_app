@@ -1,6 +1,6 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer} from '@react-navigation/native';
+import { createStackNavigator,TabRouter } from '@react-navigation/stack';
 import { Provider as StoreProvider } from 'react-redux';
 import store from '../Redux/store';
 
@@ -15,7 +15,8 @@ import UpcomingMovies from '../View/UpcomingMovies';
 import ChosenCinema from '../View/ChosenCinema'; //from all cinemas
 import CinemasMovies from '../View/CinemasMovies'; //from see chosen cinema
 import ChosenMovie from '../View/ChosenMovie'; //from chosen upcoming movies AND cinemas movies
-import ChosenUpcomingMovie from '../View/ChosenUpcomingMovie' //from upcoming movies 
+import ChosenUpcomingMovie from '../View/ChosenUpcomingMovie' //from upcoming movies
+import Footer from '../Components/Footer';
 
 
 

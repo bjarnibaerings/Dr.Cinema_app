@@ -7,7 +7,7 @@ import styles from "./styles";
 
 export function Cinemas({ navigation }){
     const dispatch = useDispatch();
-    const token = useSelector((state) => {console.log(state.api.token);return state;})
+    const token = useSelector((state) => {return state;})
     const cinemas = useSelector((state) => state.api.cinemas);
     const movies = useSelector((state) => state.api.movies)
 
@@ -15,12 +15,15 @@ export function Cinemas({ navigation }){
         dispatch(getCinemas());
     }, [dispatch])
 
+    const sortedCinemas = cinemas.slice().sort((a, b) => 
+        a.name.localeCompare(b.name));
+
 
     return(
         <View>
             <Button title="Get Movies" onPress={() => dispatch(getMovies())}/>
             <FlatList
-                data={cinemas}
+                data={sortedCinemas}
                 keyExtractor={(item) => item.id}
                 renderItem={({item}) => (
                     <View style={styles.container}>

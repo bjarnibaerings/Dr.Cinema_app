@@ -1,6 +1,8 @@
 import React from "react"
 import {View, Text, TouchableOpacity} from "react-native"
 import { useRoute } from "@react-navigation/native";
+import styles from "./styles";
+import Footer from "../../Components/Footer";
 
 
 const ChosenCinema = ({navigation}) => {
@@ -8,16 +10,26 @@ const ChosenCinema = ({navigation}) => {
     const {cinema} = route.params;
 
     return(
-        <View>
-            <Text>Cinema Name: {cinema.name}</Text>
-            <Text>Cinema Description: {cinema.description}</Text>
-            <Text>Cinema Adress: {cinema.address} {cinema.city}</Text>
-            <Text>Cinema Phone: {cinema.phone}</Text>
-            <Text>Cinema Website: {cinema.website}</Text>
-            <TouchableOpacity onPress={() => navigation.navigate("{cinema.name}'s Movies", { cinema })}>
-                <Text>Click here for all movies from this cinema</Text>
+        <View style={{flex:1}}>
+            <Text style={styles.title}>{cinema.name}</Text>
+
+            <View style={styles.container}>
+            <Text style={styles.containerText}>PhoneNumber: {cinema.phone}</Text>
+            <Text style={styles.containerText}>Website: {cinema.website}</Text>
+            </View>
+            <Text>Adress: {cinema["address\t"]} {cinema.city}</Text>
+            <Text style={styles.title}>Description</Text>
+            
+            <Text>{cinema.description}</Text>
+            <TouchableOpacity onPress={() => navigation.navigate("{cinema.name}'s Movies")}>
+                <Text> click here for all movies from cinema</Text>
             </TouchableOpacity>
+            <View style={{flex:2}}>
+                <Footer/>
+            </View>
         </View>
+
+        
     )
 };
 
