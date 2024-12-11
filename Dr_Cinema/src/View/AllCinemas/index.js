@@ -8,9 +8,6 @@ const AllCinemas = ({navigation}) => {
     return(
         <View>
             <Cinemas navigation = {navigation}/>
-            <TouchableOpacity onPress={() => navigation.navigate('{cinema.name}')}>
-                <Text> click here for a chosen cinema</Text>
-            </TouchableOpacity>
         </View>
     )
 };
