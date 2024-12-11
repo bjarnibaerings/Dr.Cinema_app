@@ -3,7 +3,6 @@ import {View, Button, Text, FlatList, TouchableOpacity} from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { getToken, getMovies, getCinemas } from "../API/apiSlicer";
 import styles from "./styles";
-import Footer from "../Footer";
 
 
 export function Cinemas({ navigation }){
@@ -34,7 +33,6 @@ export function Cinemas({ navigation }){
                     </View>
                 )}
             />
-            <Footer/>
         </View>
     );
 }

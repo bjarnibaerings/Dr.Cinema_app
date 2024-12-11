@@ -2,13 +2,14 @@ import React from "react"
 import {View, Text, TouchableOpacity} from "react-native"
 import { useRoute } from "@react-navigation/native";
 import styles from "./styles";
+import Footer from "../../Components/Footer";
 
 
 const ChosenCinema = ({navigation}) => {
     const route = useRoute();
     const {cinema} = route.params;
     return(
-        <View>
+        <View style={{flex:1}}>
             <Text style={styles.title}>{cinema.name}</Text>
 
             <View style={styles.container}>
@@ -22,7 +23,12 @@ const ChosenCinema = ({navigation}) => {
             <TouchableOpacity onPress={() => navigation.navigate("{cinema.name}'s Movies")}>
                 <Text> click here for all movies from cinema</Text>
             </TouchableOpacity>
+            <View style={{flex:2}}>
+                <Footer/>
+            </View>
         </View>
+
+        
     )
 };
 
