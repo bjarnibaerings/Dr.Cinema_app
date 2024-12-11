@@ -3,11 +3,12 @@ import {View, Button, Text, FlatList, TouchableOpacity} from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { getToken, getMovies, getCinemas } from "../API/apiSlicer";
 import styles from "./styles";
+import Footer from "../Footer";
 
 
 export function Cinemas({ navigation }){
     const dispatch = useDispatch();
-    const token = useSelector((state) => {console.log(state.api.token);return state;})
+    const token = useSelector((state) => {return state;})
     const cinemas = useSelector((state) => state.api.cinemas);
 
     useEffect(() =>{
@@ -33,6 +34,7 @@ export function Cinemas({ navigation }){
                     </View>
                 )}
             />
+            <Footer/>
         </View>
     );
 }
