@@ -1,12 +1,11 @@
-// CinemasMovies.js
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
-import Movies from "../../Components/CinemasMovies/moviesList"; // Correct import for default export
+import { View } from "react-native";
+import Movies from "../../Components/CinemasMovies/moviesList";
 
 const CinemasMovies = ({ navigation }) => {
     return (
         <View>
-            <Movies navigation = {navigation}/> {/* This will render the Movies component */}
+            <Movies navigation = {navigation}/> 
         </View>
     );
 };
