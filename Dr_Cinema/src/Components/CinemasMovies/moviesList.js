@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, TouchableOpacity, Image, Button} from "react-native";
+import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { getMovies } from "../API/apiSlicer";
 import { useRoute } from "@react-navigation/native";
