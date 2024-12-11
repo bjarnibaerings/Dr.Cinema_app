@@ -10,7 +10,7 @@ const ChosenCinema = ({navigation}) => {
         <View>
             <Text>Cinema Name: {cinema.name}</Text>
             <Text>Cinema Description: {cinema.description}</Text>
-            <Text>Cinema Adress: {cinema.address} {cinema.city}</Text>
+            <Text>Cinema Adress: {cinema["address\t"]} {cinema.city}</Text>
             <Text>Cinema Phone: {cinema.phone}</Text>
             <Text>Cinema Website: {cinema.website}</Text>
             <TouchableOpacity onPress={() => navigation.navigate("{cinema.name}'s Movies")}>
