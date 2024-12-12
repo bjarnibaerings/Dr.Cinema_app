@@ -3,6 +3,7 @@ import { View, Text, Touchable, TouchableOpacity } from "react-native"
 import { getToken } from "../../Components/API/apiSlicer";
 import { useDispatch } from "react-redux";
 import Footer from "../../Components/Footer";
+import styles from "./styles"
 
 const HomePage = ({ navigation: {navigate}}) => {
     const dispatch = useDispatch();
@@ -12,15 +13,15 @@ const HomePage = ({ navigation: {navigate}}) => {
     }, [dispatch])
 
     return(
-        <View style={{flex:1}}>
-            <Text>hello this is the main page :D :D :D :D :D :D :D :D </Text>'
-            <TouchableOpacity onPress={() => navigate("AllCinemas")}>
-                <Text>press here to go to cinema</Text>
+        <View style={styles.container}>
+            <Text style={styles.title}>Welcome To</Text>
+            <Text style={styles.title2}>Dr. Cinema!</Text>
+            <TouchableOpacity style={styles.Button} onPress={() => navigate("AllCinemas")}>
+                <Text style={styles.ButtonText}>Cinemas</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigate("UpcomingMovies")}>
-                <Text>press here to go to upcoming movies</Text>
+            <TouchableOpacity style={styles.Button} onPress={() => navigate("UpcomingMovies")}>
+                <Text style={styles.ButtonText}>Upcoming Movies</Text>
             </TouchableOpacity>
-            <Footer/>
         </View>
     )
 };

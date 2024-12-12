@@ -16,7 +16,6 @@ import ChosenCinema from '../View/ChosenCinema'; //from all cinemas
 import CinemasMovies from '../View/CinemasMovies'; //from see chosen cinema
 import ChosenMovie from '../View/ChosenMovie'; //from chosen upcoming movies AND cinemas movies
 import ChosenUpcomingMovie from '../View/ChosenUpcomingMovie' //from upcoming movies
-import Footer from '../Components/Footer';
 
 
 
