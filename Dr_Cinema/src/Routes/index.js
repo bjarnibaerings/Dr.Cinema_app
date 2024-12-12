@@ -30,7 +30,7 @@ const Routes = () => (
                 <Stack.Screen name="{cinema.name}" component={ChosenCinema} />
                 <Stack.Screen name="{cinema.name}'s Movies" component={CinemasMovies} />
                 <Stack.Screen name="{movie.name}" component={ChosenMovie} />
-                <Stack.Screen name="{upcomingMovie.name}" component={ChosenUpcomingMovie} />
+                <Stack.Screen name="{upcomingMovie.title}" component={ChosenUpcomingMovie} />
             </Stack.Navigator>
         </NavigationContainer>
     </StoreProvider>
