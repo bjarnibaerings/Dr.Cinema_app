@@ -1,7 +1,7 @@
-import React, { useEffect, Linking, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, Alert, FlatList, Image,  Button, Modal } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 import { getUpcomingMovies } from "../../Actions/upcomingMoviesActions"
 import styles from "./styles"
 import Video from "react-native-video"

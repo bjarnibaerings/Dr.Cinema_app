@@ -34,7 +34,7 @@ const Movies = ({ navigation }) => {
           data={cinemaMovies}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => navigation.navigate("{movie.name}", { movie: item, selectedCinema: cinema })}> {/**passing cinema to remain the showtime to the next screen */}
+            <TouchableOpacity style={styles.movieContainer} onPress={() => navigation.navigate("{movie.name}", { movie: item, selectedCinema: cinema })}> {/**passing cinema to remain the showtime to the next screen */}
               <View style={styles.movieItem}>
                 <Image source={{ uri: item.poster }} style={styles.thumbnail}/>
                 {/*details: */}
