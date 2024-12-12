@@ -1,12 +1,23 @@
 import { StyleSheet } from "react-native";
+import { ROUGE } from "../../Constants/colors"
 
 export default StyleSheet.create({
-    container: { padding: 10 },
-    heading: { fontSize: 20, fontWeight: "bold", marginBottom: 10 },
+    container: {
+      fontSize: 10,
+    
+    },
+    heading: {
+       fontSize: 20, 
+       fontWeight: "bold", 
+       marginBottom: 10
+       },
     movieItem: {
       flexDirection: "row",
-      marginBottom: 10,
-      alignItems: "center",
+      marginBottom: 8,
+      backgroundColor: ROUGE,
+      margin: 10,
+      padding: 10,
+      borderRadius: 10,
     },
     movieItem2: {
       flexDirection: "column",
@@ -22,16 +33,43 @@ export default StyleSheet.create({
     movieDetails: {
       flex: 1,
     },
-    movieName: { fontSize: 16, fontWeight: "bold" },
-    movieYear: { fontSize: 14 },
-    movieGenres: { fontSize: 14 },
-
+    movieContainer:{
+      padding: 12,
+      marginBottom: 10,
+      backgroundColor: ROUGE,
+      borderRadius: 10,
+      elevation: 5,
+      shadowColor: "black",
+      shadowOffset: { width: 0, height: 3 },
+      shadowOpacity: 0.1,
+      shadowRadius: 4,
+      transform: [{ scaleX: 1 }, { scaleY: 1 }],
+      position: "center"
+    },
+    movieName: {
+      fontSize: 20,
+      fontFamily: "Futura",
+      fontWeight: "bold",
+      color: "white", 
+      flex: 1,
+      flexWrap: "wrap",
+      maxWidth: 200
+     },
+    movieDate: { 
+      fontSize: 14,
+      color: "white",
+      marginTop: 10
+     },
     button: {
-        fontSize:16,
-        backgroundColor: "red",
-        color: "green",
-        borderRadius: 100,
-        margin: 10
+      fontSize:16,
+      fontFamily: "Futura",
+      backgroundColor: "white",
+      color: "black",
+      borderRadius: 100,
+      margin: 10,
+      textAlign: "center",
+      alignSelf: "center",
+      padding: 10,    
     },
     modalContainer: {
         flex: 1,
@@ -43,4 +81,35 @@ export default StyleSheet.create({
         width: "90%",
         height: "50%",
     },
+    title: {
+      fontSize: 50,
+      fontFamily: "Bebas Neue",
+      color: ROUGE,
+      textAlign: "center",
+      fontWeight: "bold", 
+      marginBottom: 10
+    },
+    buttonContainer: {
+      padding: 10,
+      alignItems: "center"
+    },
+    closeButtonContainer: {
+      padding: 10,
+      marginBottom: 15,
+      backgroundColor: "white",
+      borderRadius: 10,
+      elevation: 5, 
+      shadowColor: "black",
+      shadowOffset: { width: 0, height: 3 },
+      shadowOpacity: 0.1,
+      shadowRadius: 4,
+      transform: [{ scaleX: 1 }, { scaleY: 1 }],
+      position: "center",
+      bottom: 50
+    },
+    closeButton: {
+      fontSize: 30,
+      fontFamily: "Futura",
+      color: ROUGE
+    }
   });

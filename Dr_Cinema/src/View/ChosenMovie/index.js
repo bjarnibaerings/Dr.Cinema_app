@@ -10,7 +10,6 @@ const MovieScreen = ({ route, navigation}) => {
             <View style = {{flex: 1}}>
             <DetailedMovie route = {route} navigation = {navigation}/> {/* render compinent and passing right route params */}
             </View>
-            <Footer/>
         </View>
         
     );

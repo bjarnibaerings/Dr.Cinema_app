@@ -7,7 +7,7 @@ const CinemasMovies = ({ navigation }) => {
     return (
         <View>
             <Movies navigation = {navigation}/> 
-            <Footer/>
+
         </View>
     );
 };
