@@ -1,8 +1,14 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-    container: { padding: 10 },
-    heading: { fontSize: 20, fontWeight: "bold", marginBottom: 10 },
+    container: {
+      padding: 20 
+    },
+    heading: { 
+      fontSize: 20, 
+      fontWeight: "bold", 
+      marginBottom: 10 
+    },
     movieItem: {
       flexDirection: "row",
       marginBottom: 10,
@@ -17,7 +23,11 @@ export default StyleSheet.create({
     movieDetails: {
       flex: 1,
     },
-    movieName: { fontSize: 16, fontWeight: "bold" },
-    movieYear: { fontSize: 14 },
-    movieGenres: { fontSize: 14 },
+    movieName: { 
+      fontSize: 16, 
+      fontWeight: "bold" 
+    },
+    discription: { 
+      fontSize: 14 
+    }
   });

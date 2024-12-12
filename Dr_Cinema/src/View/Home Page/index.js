@@ -13,13 +13,13 @@ const HomePage = ({ navigation: {navigate}}) => {
 
     return(
         <View style={{flex:1}}>
-            <Text>hello this is the main page :D :D :D :D :D :D :D :D </Text>'
-            <TouchableOpacity onPress={() => navigate("AllCinemas")}>
-                <Text>press here to go to cinema</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => navigate("UpcomingMovies")}>
-                <Text>press here to go to upcoming movies</Text>
-            </TouchableOpacity>
+            <Text>Welcome to Dr.Cinema!</Text>
+            <Text>Here you can find all kinds of imformation about the next movie you are interested in watching!</Text>
+            <Text>We have gathered all the cinemas and their location  for you to find out which is the most convinient of them all!</Text>
+            <Text>Each cinema also shows what movies they are currently watching and if you are really insterested in planning to watch then you can even purchase a ticket directly through a link!</Text>
+            <Text>Now, if you are not excited about the selcection for the day you can definately check out and plan your next movie night through our upcoming movies tab!</Text>
+            <Text>Here you can find all information aobut what movies will show up for the upcoming time. </Text>
+            <Text>So, this would be a perfect time to plana a family movie time or with a special someone ;) </Text>
             <Footer/>
         </View>
     )
