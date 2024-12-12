@@ -1,26 +1,21 @@
-import React, { useState } from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
-import { useDispatch } from "react-redux";
+import { View, Text, Image } from "react-native";
 
-const Movie = (
-    name,
-    releseDate,
-    genre,
+const UpcomingMovie = ({
+    title,
+    released,
+    genres,
     poster
-) => {
-    const [movieName] = useState("");
-    const [movieReleaseDate] = useState("");
-    const [movieGenre] = useState("");
-    const [moviePoster] = useState("");
-
-    const dispatch = useDispatch();
-
+}) => {
     return (
         <View>
-            <Image> width=50, height=50, url = {moviePoster} </Image>
-            <Text>{movieName}</Text>
-            <Text>{movieReleaseDate}</Text>
-            <Text>{movieGenre}</Text>
+            <Image source={{uri: poster}} />
+            <View>
+                <Text>{title}</Text>
+                <Text>Release Date: {released}</Text>
+                <Text>Genre: {genres}</Text>
+            </View>
         </View>
     )
 }
+
+export default UpcomingMovie;

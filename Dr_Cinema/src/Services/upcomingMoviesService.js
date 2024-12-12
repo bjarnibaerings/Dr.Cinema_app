@@ -1,4 +1,4 @@
-const ENDPOINT = "";
+const ENDPOINT = "`https://api.kvikmyndir.is/upcoming?token=${token}`";
 
 const upcomingMoviesService = {
     getUpcomingMovies: async () => {
