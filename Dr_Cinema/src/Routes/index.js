@@ -1,12 +1,12 @@
 import React from 'react';
 import { NavigationContainer} from '@react-navigation/native';
-import { createStackNavigator,TabRouter } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import { Provider as StoreProvider } from 'react-redux';
+import { useSelector, useEffect} from 'react-redux';
 import store from '../Redux/store';
 
 const Stack = createStackNavigator();
 
-import Frame from '../View/Frame'; //remove later on and use as component
 //main 3 pages
 import HomePage from "../View/Home Page"
 import AllCinemas from '../View/AllCinemas';
@@ -23,15 +23,16 @@ const Routes = () => (
     <StoreProvider store={store}>
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Home Page">
-                <Stack.Screen name="Home Page" component={HomePage}/>
+                <Stack.Screen name="Home Page" component={HomePage} />
                 <Stack.Screen name="AllCinemas" component={AllCinemas} />
                 <Stack.Screen name="UpcomingMovies" component={UpcomingMovies} />
-                <Stack.Screen name="{cinema.name}" component={ChosenCinema} />
-                <Stack.Screen name="{cinema.name}'s Movies" component={CinemasMovies} />
-                <Stack.Screen name="{movie.name}" component={ChosenMovie} />
+                <Stack.Screen name="ChosenCinema" component={ChosenCinema} options={({ route }) => ({ title: route.params?.cinema.name })}/>
+                <Stack.Screen name="CinemasMovies" component={CinemasMovies} options={({ route }) => ({ title: `${route.params?.cinema.name}'s Movies` })} />
+                <Stack.Screen name="ChosenMovie" component={ChosenMovie} options={({ route }) => ({ title: route.params?.movie.name })} />
             </Stack.Navigator>
         </NavigationContainer>
     </StoreProvider>
 );
+
 
 export default Routes;
