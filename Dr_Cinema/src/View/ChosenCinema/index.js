@@ -21,7 +21,7 @@ const ChosenCinema = ({navigation}) => {
                 </View>
                 <Text style={styles.subtitle}>Description</Text>
                 <Text style={styles.descriptionText}>{cinema.description}</Text>
-                <TouchableOpacity style={styles.moviesButton} onPress={() => navigation.navigate("{cinema.name}'s Movies", { cinema })}>
+                <TouchableOpacity style={styles.moviesButton} onPress={() => navigation.navigate("CinemasMovies", { cinema })}>
                     <Text style={styles.ButtonText}> See Movies In Show</Text>
                 </TouchableOpacity>
             </View>

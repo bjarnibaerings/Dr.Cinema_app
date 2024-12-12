@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Alert, Modal, Button, Image, ScrollView }
 import { useDispatch, useSelector } from 'react-redux';
 import { getUpcomingMovies } from "../../Actions/upcomingMoviesActions";
 import styles from './styles';
-import YouTubeVideoPlayer from "../../Components/YoutubePlayer";
+import YouTubePlayer from "../../Components/YoutubePlayer";
 
 const UpcomingMoviesScreen = () => {
   const dispatch = useDispatch();
