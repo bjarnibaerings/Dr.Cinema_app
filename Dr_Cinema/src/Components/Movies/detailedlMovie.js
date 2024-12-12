@@ -41,5 +41,7 @@ const DetailedMovie= ({ route }) => {
   );
 };
 
+//want to merge
+
 
 export default DetailedMovie;
