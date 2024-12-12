@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Alert, Modal, Button, Image } from 'react
 import { useDispatch, useSelector } from 'react-redux';
 import { getUpcomingMovies } from "../../Actions/upcomingMoviesActions";
 import styles from './styles';
-import YouTubeVideoPlayer from "../../Components/YoutubePlayer";
+import YouTubePlayer from "../../Components/YoutubePlayer";
 
 const UpcomingMoviesScreen = () => {
   const dispatch = useDispatch();
@@ -57,7 +57,7 @@ const UpcomingMoviesScreen = () => {
 
       <Modal visible={isModalVisible} transparent={true} onRequestClose={() => setModalVisible(false)}>
         <View style={styles.modalContainer}>
-          <YouTubeVideoPlayer trailerUrl={trailerUrl} />
+          <YouTubePlayer trailerUrl={trailerUrl} />
           <Button title="Close" onPress={() => setModalVisible(false)} />
         </View>
       </Modal>
