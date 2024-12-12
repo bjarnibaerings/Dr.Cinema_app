@@ -28,7 +28,7 @@ const Routes = () => (
                 <Stack.Screen name="UpcomingMovies" component={UpcomingMovies} />
                 <Stack.Screen name="ChosenCinema" component={ChosenCinema} options={({ route }) => ({ title: route.params?.cinema.name })}/>
                 <Stack.Screen name="CinemasMovies" component={CinemasMovies} options={({ route }) => ({ title: `${route.params?.cinema.name}'s Movies` })} />
-                <Stack.Screen name="ChosenMovie" component={ChosenMovie} options={({ route }) => ({ title: route.params?.movie.name })} />
+                <Stack.Screen name="ChosenMovie" component={ChosenMovie} options={({ route }) => ({ title: route.params?.movie.title })} />
             </Stack.Navigator>
         </NavigationContainer>
     </StoreProvider>
