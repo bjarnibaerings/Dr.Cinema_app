@@ -1,13 +1,18 @@
 import React from "react";
 import { View } from "react-native";
 import DetailedMovie from "../../Components/Movies/detailedlMovie";
+import Footer from "../../Components/Footer";
 
-const MovieScreen = ({ navigation, route }) => {
-    console.log(route)
+
+const MovieScreen = ({ route, navigation}) => {
     return (
-        <View>
-            <DetailedMovie route = {route}/> {/* render compinent and passing right route params */}
+        <View style = {{flex: 1}}> {/* ugly styling but could not find another way to do it with scrollview :(( */}
+            <View style = {{flex: 1}}>
+            <DetailedMovie route = {route} navigation = {navigation}/> {/* render compinent and passing right route params */}
+            </View>
+            <Footer/>
         </View>
+        
     );
 };
 
