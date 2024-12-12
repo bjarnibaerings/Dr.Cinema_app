@@ -32,17 +32,19 @@ const styles = StyleSheet.create({
         bottom: 0,
         flexDirection: "row",
         position:"absolute",
-        bottom:5
+        bottom:1,
+
+        
     },
     button:{
         borderColor: "black",
-        borderRightWidth:5,
-        borderLeftWidth: 5,
+        borderRightWidth:2,
+        borderLeftWidth: 2,
         borderTopWidth:2,
         borderBottomWidth:2,
         height:"100%",
-        width:139,
-        paddingTop:25
+        width: "33.33%",
+        paddingTop:25,
     },
     buttonText:{
         fontSize:20,

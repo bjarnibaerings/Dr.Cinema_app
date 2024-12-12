@@ -17,15 +17,17 @@ const Movies = ({ navigation }) => {
         dispatch(getMovies());
       }
     }, [cinema, dispatch]);
-  
+
+
     useEffect(() => {
-      if (movies.length > 0 && cinema) { // filtering movies by CINEMA
-        const filteredMovies = movies.filter((movie) =>
-          movie.showtimes.some((showtime) => showtime.cinema.id === cinema.id)
-        ); 
-        setCinemaMovies(filteredMovies);
+      if (movies.length > 0 && cinema) {
+          const filteredMovies = movies.filter((movie) =>
+              movie.showtimes.some((showtime) => showtime.cinema.id === cinema.id)
+          );
+          setCinemaMovies(filteredMovies);
       }
-    }, [movies, cinema]);
+  }, [movies, cinema]);
+  
   
     return (
       <View style={styles.container}>
@@ -40,8 +42,8 @@ const Movies = ({ navigation }) => {
                 {/*details: */}
                 <View style={styles.movieDetails}>
                   <Text style={styles.movieName}>{item.title}</Text>
-                  <Text style={styles.movieYear}>Year: {item.year}</Text>
-                  <Text style={styles.movieGenres}>
+                  <Text style={styles.discription}>Year: {item.year}</Text>
+                  <Text style={styles.discription}>
                     Genres: {item.genres.map((g) => g.Name).join(", ")} 
                   </Text>
                 </View>

@@ -22,7 +22,7 @@ const DetailedMovie= ({ route }) => {
         Genres: {movie.genres.map((g) => g.Name).join(", ") || 'Genres not available'}
       </Text>
 
-      {/* Showtimes for the selected cinema */}
+      {/* showtimes */}
       <Text style={styles.subtitle}>Showtimes:</Text>
       {cinemaShowtimes.map((cinema, index) => (
         <View key={index}>

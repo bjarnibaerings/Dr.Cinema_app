@@ -18,7 +18,7 @@ export const fetchUpcomingMoviesFailure = (error) => ({
 });
 
 
-export const getUpcomingMovies = () =>{
+export const getUpcomingMovies = () => {
     return async (dispatch, getState) => {
         const state = getState();
         const token = state.api.token;
@@ -28,11 +28,11 @@ export const getUpcomingMovies = () =>{
         try {
             const response = await fetch(`https://api.kvikmyndir.is/upcoming?token=${token}`);
             const movies = await response.json();
-            console.log(movies[1].trailers[0].results[0].url)
+
             dispatch(fetchUpcomingMoviesSuccess(movies));
         } catch (error) {
-            dispatch(fetchUpcomingMoviesFailure(error.toString()))
-            Alert.alert("Error", "Failed to fetch upcoming movies")
+            dispatch(fetchUpcomingMoviesFailure(error.toString()));
+            Alert.alert("Error", "Failed to fetch upcoming movies");
         }
-    } ;
-};   
+    };
+};
