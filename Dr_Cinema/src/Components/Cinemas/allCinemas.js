@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-import {View, Button, Text, FlatList, TouchableOpacity} from "react-native";
+import {View, ScrollView, Button, Text, FlatList, TouchableOpacity} from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import { getToken, getMovies, getCinemas } from "../API/apiSlicer";
 import styles from "./styles";
@@ -20,20 +20,22 @@ export function Cinemas({ navigation }){
 
 
     return(
-        <View>
-            <Button title="Get Movies" onPress={() => dispatch(getMovies())}/>
             <FlatList
                 data={sortedCinemas}
                 keyExtractor={(item) => item.id}
                 renderItem={({item}) => (
-                    <View style={styles.container}>
-                    <TouchableOpacity onPress={() => navigation.navigate('{cinema.name}', {cinema: item})}>
+                    <View >
+                    <TouchableOpacity style={styles.cinemaContainer} onPress={() => navigation.navigate('{cinema.name}', {cinema: item})}>
                         <Text style={styles.cinemaName}>{item.name}</Text>
+                        <Text style={styles.subText}>{item.website}</Text>
                     </TouchableOpacity>
-                        <Text>{item.website}</Text>
                     </View>
                 )}
+                contentContainerStyle={{
+                    paddingBottom: 20,
+                    justifyContent: "center",
+                    alignItems: "center", 
+                }}
             />
-        </View>
     );
 }

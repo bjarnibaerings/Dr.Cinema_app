@@ -7,9 +7,8 @@ import Footer from "../../Components/Footer";
 
 const AllCinemas = ({navigation}) => {
     return(
-        <View style={{flex:1}}>
+        <View>
             <Cinemas navigation = {navigation}/>
-            <Footer/>
         </View>
         
     )
