@@ -1,5 +1,5 @@
 import React from "react";
-import { View,Text, Image, StyleSheet, ScrollView, TouchableOpacity, Linking } from "react-native";
+import { View,Text, Image, ScrollView, TouchableOpacity, Linking } from "react-native";
 import styles from "./styles";
 
 const DetailedMovie= ({ route }) => {
@@ -19,7 +19,7 @@ const DetailedMovie= ({ route }) => {
       <Text style={styles.plot}>{movie.plot}</Text>
 
       <Text style={styles.movieGenres}>
-      Genres: {item.genres.map((g) => g.Name).join(", ") || 'Genres not available'}
+        Genres: {movie.genres.map((g) => g.Name).join(", ") || 'Genres not available'}
       </Text>
 
       {/* Showtimes for the selected cinema */}

@@ -1,12 +1,12 @@
-// CinemasMovies.js
 import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View } from "react-native";
 import DetailedMovie from "../../Components/Movies/detailedlMovie";
 
 const MovieScreen = ({ navigation, route }) => {
+    console.log(route)
     return (
         <View>
-            <DetailedMovie route = {route}/> {/* This will render the Movies component */}
+            <DetailedMovie route = {route}/> {/* render compinent and passing right route params */}
         </View>
     );
 };
