@@ -61,7 +61,7 @@ const UpcomingMoviesScreen = () => {
 
         <Modal visible={isModalVisible} transparent={true} onRequestClose={() => setModalVisible(false)}>
           <View style={styles.modalContainer}>
-            <YouTubeVideoPlayer trailerUrl={trailerUrl} />
+            <YouTubePlayer trailerUrl={trailerUrl} />
             <TouchableOpacity style={styles.closeButtonContainer}>-
               <Text style={styles.closeButton} onPress={() => setModalVisible(false)}>Close</Text>
             </TouchableOpacity>
