@@ -1,5 +1,5 @@
 import React from "react"
-import {View, Text, TouchableOpacity} from "react-native"
+import {ScrollView, View, Text, TouchableOpacity} from "react-native"
 import { useRoute } from "@react-navigation/native";
 import styles from "./styles";
 import Footer from "../../Components/Footer";
@@ -10,25 +10,22 @@ const ChosenCinema = ({navigation}) => {
     const { cinema } = route.params;
 
     return(
-        <View style={{flex:1}}>
-            <Text style={styles.title}>{cinema.name}</Text>
-
+        <ScrollView style={styles.scrollContainer}>
             <View style={styles.container}>
-            <Text style={styles.containerText}>PhoneNumber: {cinema.phone}</Text>
-            <Text style={styles.containerText}>Website: {cinema.website}</Text>
-            </View>
-            <Text>Adress: {cinema["address\t"]} {cinema.city}</Text>
-            <Text style={styles.title}>Description</Text>
-            
-            <Text>{cinema.description}</Text>
-            <TouchableOpacity onPress={() => navigation.navigate("{cinema.name}'s Movies", { cinema })}>
-                <Text> click here for all movies from cinema</Text>
-            </TouchableOpacity>
-            <View style={{flex:2}}>
-                <Footer/>
-            </View>
-        </View>
+                <Text style={styles.title}>{cinema.name}</Text>
 
+                <View style={styles.container}>
+                    <Text style={styles.containerText}>Phone Number: {cinema.phone}</Text>
+                    <Text style={styles.containerText}>Website: {cinema.website}</Text>
+                    <Text style={styles.containerText}>Adress: {cinema["address\t"]} {cinema.city}</Text>
+                </View>
+                <Text style={styles.subtitle}>Description</Text>
+                <Text style={styles.descriptionText}>{cinema.description}</Text>
+                <TouchableOpacity style={styles.moviesButton} onPress={() => navigation.navigate("{cinema.name}'s Movies", { cinema })}>
+                    <Text style={styles.ButtonText}> See Movies In Show</Text>
+                </TouchableOpacity>
+            </View>
+        </ScrollView>
         
     )
 };

@@ -1,0 +1,1 @@
+export const ROUGE = '#E50914';
