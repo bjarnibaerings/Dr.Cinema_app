@@ -27,7 +27,7 @@ export function Cinemas({ navigation }){
                 keyExtractor={(item) => item.id}
                 renderItem={({item}) => (
                     <View style={styles.container}>
-                    <TouchableOpacity onPress={() => navigation.navigate('{cinema.name}', {cinema: item})}>
+                    <TouchableOpacity onPress={() => navigation.navigate("ChosenCinema", {cinema: item})}>
                         <Text style={styles.cinemaName}>{item.name}</Text>
                     </TouchableOpacity>
                         <Text>{item.website}</Text>

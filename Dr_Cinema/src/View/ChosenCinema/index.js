@@ -21,7 +21,7 @@ const ChosenCinema = ({navigation}) => {
             <Text style={styles.title}>Description</Text>
             
             <Text>{cinema.description}</Text>
-            <TouchableOpacity onPress={() => navigation.navigate("{cinema.name}'s Movies", { cinema })}>
+            <TouchableOpacity onPress={() => navigation.navigate("CinemasMovies", { cinema })}>
                 <Text> click here for all movies from cinema</Text>
             </TouchableOpacity>
             <View style={{flex:2}}>
